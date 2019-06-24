@@ -1,0 +1,11 @@
+0	knetscore	network_view
+TRAESCS1A02G173400	306.22	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS1A02G173400&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
+TRAESCS4B02G293600	13.10	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS4B02G293600&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
+TRAESCS6A02G024400	0.00	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS6A02G024400&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
+TRAESCS6A02G222000	104.23	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS6A02G222000&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
+TRAESCS5A02G030800	227.47	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS5A02G030800&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
+TRAESCS4D02G275500	40.21	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS4D02G275500&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
+TRAESCS7D02G538400	76.91	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS7D02G538400&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
+TRAESCS7A02G107400	88.59	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS7A02G107400&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
+TRAESCS3A02G231900	0.00	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS3A02G231900&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
+TRAESCS3B02G302100	35.66	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS3B02G302100&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
