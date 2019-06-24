@@ -27,14 +27,20 @@ def summary():
         pheno=[]
         for line in fk:
             pheno.append(line.rstrip())
-        print(pheno)
+        #print(pheno)
         summary=pd.read_csv(args.file, sep="\t", header=None)
-        genes=list(summary[0])
+        summary.rename (
+        columns={
+            0:"GENE"
+        }, inplace=True
+        )
+        genes=list(summary["GENE"])
+        #print(genes[1])
 
         #creating knetminer genepage urls.
         network_view=[]
         keyw2 = "+OR+".join("({})".format(i.replace(" ", "+AND+")) for i in pheno)
-        print(keyw2)
+        #print(keyw2)
         #define species
         if args.species == 1:
             species="riceknet"
@@ -53,6 +59,7 @@ def summary():
         link="http://knetminer.rothamsted.ac.uk/{}/genome?".format(species)
         parameters={"keyword":keyw1, "list":genestr}
         r=requests.get(link, params=parameters)
+        #print(r.text)
 
         #check if requests is successful
         if not r.ok:
@@ -68,24 +75,26 @@ def summary():
         #tabulate genetable into 9 columns.
         genetable=np.array(decoded).reshape(len(decoded)//colnum, colnum)
         genetable=pd.DataFrame(genetable[1:,:], columns=genetable[0,:])
+        #print(genetable.shape)
 
         knetgenes=list(genetable[u'ACCESSION'])
+        #print(knetgenes)
         knetscores=list(genetable[u'SCORE'])
         knetchro=list(genetable[u'CHRO'])
         knetstart=list(genetable[u'START'])
 
         #map genes to snps via a dictionary.
         knetdict=dict(zip(knetgenes, knetscores))
-        ordered_score=[]
-        '''
-        for i in summary[0]:
+        ordered_score=[]     
+        for i in genes:
             #convert gene id to upper case to avoid sensitivity issues.
             i=i.upper()
-            ordered_score.append(knetdict[u'{}'.format(i)])
+            ordered_score.append(knetdict[i])
+        
         summary[u'knetscore'] = ordered_score
-        '''
+        summary[u'chromosome']=knetchro
+        summary[u'start_position']=knetstart
         summary[u'network_view']=network_view
-        summary[u'knetscore']=knetscores
 
         summary.to_csv("results.txt", sep="\t", index=False)
 

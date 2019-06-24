@@ -1,0 +1,6 @@
+GENE	knetscore	chromosome	start_position	network_view
+TRAESCS1A02G173400	306.22	1A	309401615	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS1A02G173400&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
+TRAESCS4B02G293600	13.10	5A	28103856	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS4B02G293600&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
+TRAESCS6A02G024400	0.00	6A	414864874	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS6A02G024400&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
+TRAESCS6A02G222000	104.23	4B	579391172	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS6A02G222000&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
+TRAESCS5A02G030800	227.47	6A	12131874	https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=TRAESCS5A02G030800&keyword=(Germination)+OR+(Coleoptile+AND+length)+OR+(Mesocotyl+AND+length)
