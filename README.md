@@ -93,9 +93,7 @@ python map_snp_to_gene_vEn.py GAPIT.MLM.DTF.GWAS.Results.csv mock_keyword_list.t
 
 
 ## External tools included
-
-
-Knetminer
+[Knetminer V3.0](https://knetminer.rothamsted.ac.uk/KnetMiner/)
 
 
 
@@ -108,8 +106,4 @@ Colin Li
 
 
 ## Acknowledgement
-
-Knetminer
-
-
-Rothamsted Resarch
+Bioinformatics Department, Computational and Analytical Sciences, Rothamsted Resarch
