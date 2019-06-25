@@ -55,7 +55,11 @@ def summary():
 
         #obtaining knetscores for genes
         keyw1 = "%20OR%20".join("({})".format(i.replace(" ", "+AND+")) for i in pheno)
+        print("The traits provided by user:")
+        print(keyw1)
+        print("The genes provided by user:")
         genestr=(",").join(genes)
+        print(genestr)
         link="http://knetminer.rothamsted.ac.uk/{}/genome?".format(species)
         parameters={"keyword":keyw1, "list":genestr}
         r=requests.get(link, params=parameters)
@@ -65,6 +69,8 @@ def summary():
         if not r.ok:
                 r.raise_for_status()
                 sys.exit()
+        else:
+            print("request successful")
 
         #extract unicode string of geneTable decoded from json
         decoded=r.json()[u'geneTable'].split("\t")
@@ -85,6 +91,8 @@ def summary():
 
         #map genes to snps via a dictionary.
         knetdict=dict(zip(knetgenes, knetscores))
+        print("Displaying knetscores for every gene.")
+        print(knetdict)
         ordered_score=[]     
         for i in genes:
             #convert gene id to upper case to avoid sensitivity issues.
@@ -95,6 +103,8 @@ def summary():
         summary[u'chromosome']=knetchro
         summary[u'start_position']=knetstart
         summary[u'network_view']=network_view
+        print("These are the genepage urls")
+        print(network_view)
 
         summary.to_csv("results.txt", sep="\t", index=False)
 
@@ -107,7 +117,7 @@ def main():
         raise
 
     try:
-        print("Searching with Knetminer for related genes inquired.")
+        print("Searching with Knetminer for information relating to the genes.")
         summary()
     except:
         raise
