@@ -23,11 +23,11 @@ def mkfolder():
     # end of mkfolder()
 
 def summary():
+    '''Search on knetminer using information provided and truncate down to only relevant info'''
     with open(args.list, "r") as fk:
         pheno=[]
         for line in fk:
             pheno.append(line.rstrip())
-        #print(pheno)
         summary=pd.read_csv(args.file, sep="\t", header=None)
         summary.rename (
         columns={
@@ -35,7 +35,7 @@ def summary():
         }, inplace=True
         )
         genes=list(summary["GENE"])
-        #print(genes[1])
+        
 
         #creating knetminer genepage urls.
         network_view=[]
@@ -103,10 +103,12 @@ def summary():
         summary[u'chromosome']=knetchro
         summary[u'start_position']=knetstart
         summary[u'network_view']=network_view
-        print("These are the genepage urls")
-        print(network_view)
+        print("These are the genepage urls. Also available in results.txt.")
+        for i in network_view:
+            print(str(i))
 
         summary.to_csv("results.txt", sep="\t", index=False)
+    #end of append_summary
 
 
 def main():
@@ -124,6 +126,7 @@ def main():
 
     os.remove(args.list)
     os.remove(args.file)
+    #end of main
 
 
 if __name__ == "__main__":
