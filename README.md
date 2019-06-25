@@ -68,7 +68,7 @@ Returns the usage of the script as the following:
 usage: genepage-insight.py [-h] file list species
 ```
 The **mandatory arguments** are:
-* File. A plain text file containinig a list of input genes line by line. An example text file used for tutorial is example_list.txt.
+* File. A plain text file containinig a list of input genes line by line. An example text file used for tutorial is example_list.txt. Example_list.txt contains a list of the first 5 wheat genes belonging to solstice and skyfall variety from [CerealsDB](http://www.cerealsdb.uk.net/cerealgenomics/CerealsDB/indexNEW.php) returned by a [prior investigation](https://github.com/colinliCitrolius/team3/blob/master/scores.tab).
 
 
 * List. A plain text file containing one or more short description (one or two words) of the phenotype or phenotypes the genes of interest might potentially be influencing, listed line by line. An example list, mock_keyword_list.txt can be found in the repository.
@@ -80,14 +80,19 @@ The **mandatory arguments** are:
      * 2 represents wheat
      * 3 represents arabidopsis
 
-If the User has either a standard or Easybuild terminal set up with requests installed, they can run the following command. This will reproduce the directories: ./example_list which contains a tabular results.txt file summarising the Knetminer findings on genes provided.
+If the User has either a standard or Easybuild terminal set up with requests installed, they can run the following command. This will reproduce the directories: ./example_list which contains results.txt summarising the Knetminer findings on genes provided. 
 
 ```
-python genepage-insight.py example_list.txt mock_keyword_list.txt 1
+python genepage-insight.py example_list.txt mock_keyword_list.txt 2
 ```
 
 #### 6. Output information
+The output will be a tabular text file containing 5 columns of Genes, Knetscore, chromosome, gene start position and network view.
+To see an example of the result of the script, see ./example_list/results.txt
 
+The Knetscore column assesses the relevance of the gene to the trait or traits of interest provided in the keyword list file. The higher the knetscore, the more likely the gene is to influence the trait.
+
+The network view column contains URL addresses to networks of Knetminer which displays related orthologues, other traits encoded by the gene and publications etc. 
 
 
 ## External tools included
