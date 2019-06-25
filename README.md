@@ -6,15 +6,18 @@ The instructions below provide users with a copy of this program which can be di
 The tabular output would provide the users with the chromosome and start position for every gene, a knetscore which assesses the relevance of each gene to the specified phenotype or phenotypes and a Knetminer genepage url per gene.
 The url leads the user into Knetminer's network view which accelerates research by outlining orthology of the gene as well as traits and publications related to it.
 
-#### Prerequisites
+## Prerequisites
 * The script can run on any computer with access to Python2.7 and above or any versions of Python3. 
 
 * The program does not require heavy computational resources. However, as the user may prefer high performance computing the instructions on how to set up and run the program on a node managed by the Easybuild framework has been included below. The User should read set up instructions specific to any other HPC frameworks.
 
-* Python virtual environments, e.g. virtualenv for python2 or pyvenv for python3. If the user does not have root permission on Easybuild a virtual environment is required for installation of numpy and pandas through pip. See **3. Installing requests** in **Instructions** on how to do this.
+* Python virtual environments, e.g. virtualenv for python2 or pyvenv for python3. If the user does not have root permission on Easybuild a virtual environment is required for installation of requests, numpy and pandas through pip. See **4.Installing python request library** in **Instructions** on how to do this.
+
+
+
 
 ## Tutorial and usage instructions
-This is a quick tutorial to get the user started by reproducing the outputs of map_snp_to_gene_vEN.py for 2 different GWAS output spreadsheets, GAPIT.MLM.DTF.GWAS.Results.csv and GAPIT.MLM.blupWidth.GWAS.Results.csv as seen in the 2 directories of the same names. The tutorial generally assume the user is using linux managed by Easybuild.
+This is a quick tutorial to get the user started by reproducing the outputs of map_snp_to_gene.py for 2 different GWAS result spreadsheets, GAPIT.MLM.DTF.GWAS.Results.csv and GAPIT.MLM.blupWidth.GWAS.Results.csv as seen in the 2 directories of the same names. The tutorial generally assumes the user is using linux managed by Easybuild.
 
 #### 1.Downloading the repository
 Clone this repository with the GitHub URL using either Git or a Git GUI. The user should obtain a directory named gwas-gene-discovery containing identical contents to the GitHub repository.
@@ -35,7 +38,7 @@ Check all the available versions of python currently on cluster:
 ```
 module avail Python
 ```
-Afer a Python2.7 and above or Python3 version has been selected either edit the sbatch script in this repository, virtualenv_setup.sbatch or execute the commands below.
+After the user has decided on a version of Python2 that is 2.7 and above or Python3 execute the commands below.
 
 ```
 module load <Python version>
@@ -49,11 +52,10 @@ source </path to env>/bin/activate/
 ```
   
 #### 4.Installing python request library
-Requests is needed for the steps that send HTTP request protocols found in the script while Numpy and Pandas are required for obtaining information from Kentminer API. Use pip to install the following library:
+Requests is needed for the steps that send HTTP request protocols found in the script while Numpy and Pandas are required for tabulating information from Knetminer API. Pandas library includes Numpy therefore use pip to install the 2 libraries:
 ```
 pip install requests
 pip install pandas
-pip install numpy
 ```
 
 #### 5.Execution of script
