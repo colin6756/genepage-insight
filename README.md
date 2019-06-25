@@ -1,4 +1,4 @@
-# genepage-insight
+# Genepage-insight
 
 ## Overview
 The instructions below provide users with a copy of this program which can be directly used or adapted for their own project. The program require 2 plain text files, one containing a list of geneIDs and the other with a list of keywords describing the phenotypes the user suspects the genes have influence over. The script can work for either rice, wheat or arabidopsis.
@@ -68,26 +68,22 @@ Returns the usage of the script as the following:
 usage: genepage-insight.py [-h] file list species
 ```
 The **mandatory arguments** are:
-* File. A spreadsheet containing the results of GWAS analysis. The fields of spreadsheet should be arranged in the order below as the script was originally designed for GAPIT software outputs (examples being 2 csv files in repository).:
+* File. A plain text file containinig a list of input genes line by line. An example text file used for tutorial is example_list.txt.
 
-SNP [integer], Chromosome [integer], Position [integer], P.value [float]
 
-* List. A plain text file containing one or more short description of the phenotype or phenotypes genes of interest are suspected to influence. The keywords should be vertically listed line by line. An example list, mock_keyword_list.txt can be found in the repository.
+* List. A plain text file containing one or more short description (one or two words) of the phenotype or phenotypes the genes of interest might potentially be influencing, listed line by line. An example list, mock_keyword_list.txt can be found in the repository.
 
 * Species. The species of organism subjected to gwas which the script will return gene IDs specific to. The options are currently 3 species represented by an integer value as shown below:
 
 
-     * 1 represents rice
+     * 1 represents rice (Japonica variety only)
      * 2 represents wheat
      * 3 represents arabidopsis
 
-If the User has either a standard or Easybuild terminal set up with requests installed, they can run the following command. This will reproduce the directories: ./example_list which contains a tabular txt file summarising the Knetminer findings on genes provided.
+If the User has either a standard or Easybuild terminal set up with requests installed, they can run the following command. This will reproduce the directories: ./example_list which contains a tabular results.txt file summarising the Knetminer findings on genes provided.
 
 ```
-python map_snp_to_gene_vEn.py GAPIT.MLM.DTF.GWAS.Results.csv mock_keyword_list.txt 1
-```
-```
-python map_snp_to_gene_vEn.py GAPIT.MLM.DTF.GWAS.Results.csv mock_keyword_list.txt 1
+python genepage-insight.py example_list.txt mock_keyword_list.txt 1
 ```
 
 #### 6. Output information
